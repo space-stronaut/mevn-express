@@ -5,8 +5,10 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const uri = "mongodb://127.0.0.1:27017/belajar_mongo"
 const Article = require('/home/ronald916/Documents/mevn/exjs/utils/article')
+const bodyParser = require('body-parser')
 
 app.use(cors())
+app.use(bodyParser.json())
 
 mongoose.connect(uri, {useNewUrlParser : true, useUnifiedTopology : true})
     .then(res => app.listen(port))
